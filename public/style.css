@@ -1,4 +1,24 @@
 .Get-unicorn{
-    width: 20%; 
-    height: 20%;
+    width: 10%; 
+    height: 10%;
+}
+
+.unicorn{
+    color: crimson;
+}
+
+.delete-unicorn{
+    width: 5%; 
+    height: 5%;
+}
+
+.headline{
+    color: blueviolet
+}
+
+
+body{
+    background-image: url("back-gif.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
 }

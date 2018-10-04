@@ -39,6 +39,18 @@ router.post('', function (req, res) {
     
 });
 
+router.delete('/:id', function (req, res) {
+    const id = req.params.id;
+    Unicorn.findByIdAndRemove(id, function (err, post) {
+        if (err) {
+            console.error(err);
+            res.status(500).send(err);
+        }else{
+            res.send("ok")
+        }
+    });
+});
+
 
 
 module.exports = router

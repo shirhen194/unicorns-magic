@@ -15,7 +15,7 @@
 <div class="container">
     <form class="header-form container">
         <div class="form-group">
-            <h1>My unicorns</h1>
+            <h1 class="headline">My unicorns</h1>
             <br>
             <div class="input-group mb-3 unicorn-form">
                 <input type="text" class="form-control name-input" placeholder="Enter unicorn name.." aria-describedby="basic-addon2" required>
@@ -31,9 +31,10 @@
 
         {{#each unicorns}}
         <br>
-        <div data-id="{{id}}" class="unicorn container">
+        <div data-id="{{_id}}" class="unicorn container">
             <h3>{{name}}</h3>
             <h5>has the magic of {{magic}}</h5>
+            delete {{name}}? <img src="\delete-unicorn.jpg" class="delete-unicorn">
         </div> 
         {{/each}}
          

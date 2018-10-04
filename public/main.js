@@ -12,6 +12,15 @@ function getUnicorns(){
     return $.get("unicorns").then((unicorns)=>{renderUnicorns(unicorns)})
 }
 
+function removeUnicorn(unicornId){
+    return $.ajax({
+        method: 'DELETE',
+        url: `unicorns/${unicornId}`
+    })
+        .then(() => {getUnicorns()}).fail(()=> console.log("problem deleting"))
+    
+}
+
 function renderUnicorns(unicorns){
     $('.unicorns').empty();
     var source = $('#unicorn-template').html();
@@ -29,4 +38,14 @@ $('.Get-unicorn').on('click', function () {
     sendUnicorn(unicorn).then(()=>getUnicorns()).fail(()=> 
     {console.log("we didnt get unicorns!:(")})
 })
+
+$(".unicorns").on('click', '.delete-unicorn', function () {
+    let id = $(this).closest('.unicorn').data().id
+    removeUnicorn(id);
+
+})
+
+
+getUnicorns().fail(()=> 
+    {console.log("we didnt get unicorns!:(")})
 
